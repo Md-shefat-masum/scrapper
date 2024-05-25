@@ -43,6 +43,14 @@ function delay() {
             let short_description = element.querySelectorAll('.short-description ul li');
             short_description = [...short_description].map(item => item.innerText);
 
+            let price_single = element.querySelector('.p-item-price span');
+            if (price_single) {
+                price_single = price_single.innerText.replace(/[^\d]/g, '');
+                price_single = parseFloat(price_single);
+            } else {
+                price_single = 0;
+            }
+
             let price_new = element.querySelector('.price-new');
             if (price_new) {
                 price_new = price_new.innerText.replace(/[^\d]/g, '');
@@ -66,6 +74,7 @@ function delay() {
                 product_list_short_description: short_description,
                 price_new,
                 price_old,
+                price_single,
             }
         });
     }, selector);
