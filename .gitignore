@@ -1,2 +1,4 @@
 /node_modules
-/**/*.json
+/myapp/products/**/*.json
+/myapp/node_modules
+myapp/public/javascripts/startech_links.json
